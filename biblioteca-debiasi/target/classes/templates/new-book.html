@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Nuovo prodotto</title>
+</head>
+<body>
+    <div class="col-3">
+        <div>
+            <h2>Nuovo libro</h2>
+        </div>
+
+        <div>
+            <form th:method="post" th:action="@{/libro/nuovo/handler}" th:object="${bookForm}">
+                <div>
+                    <label>Isbn</label>
+                    <br>
+                    <input type="number" th:field="*{isbn}">
+                </div>
+                <div>
+                    <label>Titolo</label>
+                    <br>
+                    <input type="text" th:field="*{titolo}">
+                </div>
+                <div>
+                    <label>Autore</label>
+                    <br>
+                    <input type="text" th:field="*{autore}">
+                </div>
+                <div>
+                    <label>Genere</label>
+                    <br>
+                    <input type="text" th:field="*{Genere}">
+                </div>
+                <div>
+                    <label>Anno di pubblicazzione</label>
+                    <br>
+                    <input type="number" th:field="*{annoPubblicazione}">
+                </div>
+                <br>
+                <div>
+                    <input class="btn btn-success" type="submit" value="Aggiungi libro">
+                    <a class="btn btn-primary" th:href="@{/biblio}">Biblioteca</a>
+                    <!-- Qua dovevo mettere invece che /biblio, mettere /book-recap, solo che non sono riuscito a farlo in tempo,
+                         quindi ho messo così per farlo funzionare-->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
